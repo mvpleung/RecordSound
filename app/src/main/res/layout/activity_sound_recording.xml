@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recording_bg">
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/enjoy_title_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_layout">
+
+        <RelativeLayout
+            android:id="@+id/trajectory_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/value_40_80"
+            android:background="@color/btn_recording_bg">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/time_layout">
+
+                <com.record.sound.library.view.WaveSurfaceView
+                    android:id="@+id/wavesfv"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="@color/transparent"
+                    android:visibility="gone" />
+
+                <com.record.sound.library.view.WaveformView
+                    android:id="@+id/waveview"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="@color/transparent"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/time_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/value_6_80">
+
+                <ImageView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/value_2_80"
+                    android:layout_marginTop="@dimen/value_2_80"
+                    android:src="@mipmap/icon_rec" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/value_2_80"
+                    android:layout_marginTop="@dimen/value_2_80"
+                    android:text="00:00:00"
+                    android:textColor="@color/invoice_text_color"
+                    android:textSize="@dimen/font_13" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/add_music_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/value_8_80"
+            android:layout_below="@+id/trajectory_layout"
+            android:layout_margin="@dimen/value_4_80"
+            android:background="@drawable/button_black_bg"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/add_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_add_music"
+                android:drawablePadding="@dimen/value_2_80"
+                android:gravity="center"
+                android:scrollX="0dip"
+                android:text="添加配音"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/music_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/value_20_80"
+            android:layout_below="@+id/trajectory_layout"
+            android:layout_marginBottom="@dimen/value_4_80"
+            android:layout_marginLeft="@dimen/value_4_80"
+            android:layout_marginRight="@dimen/value_4_80"
+            android:layout_marginTop="@dimen/value_2_80"
+            android:background="@drawable/button_black_bg"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/value_2_80"
+                android:layout_marginTop="@dimen/value_3_80"
+                android:text="配乐"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16" />
+
+            <com.record.sound.custom.SwitchButton
+                android:id="@+id/soundtrack"
+                android:layout_width="@dimen/value_9_80"
+                android:layout_height="23dip"
+                android:layout_marginLeft="@dimen/value_2_80"
+                android:layout_marginTop="@dimen/value_2_80"
+                android:layout_toRightOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/value_2_80"
+                android:layout_marginTop="@dimen/value_3_80"
+                android:drawableLeft="@mipmap/icon_change_music"
+                android:drawablePadding="@dimen/value_2_80"
+                android:gravity="center"
+                android:text="更换配乐"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_marginLeft="@dimen/value_3_80"
+                android:layout_marginTop="@dimen/value_6_80"
+                android:src="@mipmap/icon_music_voice" />
+
+            <SeekBar
+                android:id="@+id/album_bar"
+                style="@style/CustomSoundSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/value_4_80"
+                android:layout_below="@+id/textView1"
+                android:layout_marginLeft="@dimen/value_2_80"
+                android:layout_marginRight="@dimen/value_2_80"
+                android:layout_marginTop="27dip"
+                android:layout_toRightOf="@+id/imageView1"
+                android:paddingLeft="@dimen/value_2_80"
+                android:paddingRight="@dimen/value_2_80"
+                android:paddingEnd="0dip"
+                android:paddingStart="0dip" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.record.sound.custom.CustomTextView
+        android:id="@+id/recording"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/value_20_80"
+        android:drawablePadding="@dimen/value_1_80"
+        android:drawableTop="@mipmap/icon_recording_button"
+        android:gravity="center"
+        android:scrollX="0dip"
+        android:text="最长[90分钟]录制哦"
+        android:textColor="@color/invoice_text_color"
+        android:textSize="@dimen/font_12" />
+
+    <LinearLayout
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/value_14_80"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/value_2_80"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/listen"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/value_1_80"
+            android:drawableTop="@mipmap/icon_record_listen_n"
+            android:gravity="center"
+            android:text="试听"
+            android:textColor="@color/invoice_text_color"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/value_1_80"
+            android:drawableTop="@mipmap/icon_record_reset_n"
+            android:gravity="center"
+            android:text="重置"
+            android:textColor="@color/invoice_text_color"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/cut"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/value_1_80"
+            android:drawableTop="@mipmap/icon_record_cut_n"
+            android:gravity="center"
+            android:text="裁剪"
+            android:textColor="@color/invoice_text_color"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/value_1_80"
+            android:drawableTop="@mipmap/icon_record_save_n"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="@color/invoice_text_color"
+            android:textSize="@dimen/font_12" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/soundtrack_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_layout"
+        android:background="@color/black"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/soundtrack_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/recording_bg"
+            android:dividerHeight="0.7dip"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="未搜索出配音~"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

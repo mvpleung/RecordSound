@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 Tapas Mobile Ltd.  All Rights Reserved. -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator" >
+
+    <translate
+        android:duration="200"
+        android:fromXDelta="0.0%"
+        android:toXDelta="-100.0%" />
+
+</set>

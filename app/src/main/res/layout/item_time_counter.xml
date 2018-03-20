@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="20dp">
+
+        <View
+            android:id="@+id/line_left"
+            android:layout_width="1dip"
+            android:layout_height="18dp"
+            android:background="#FF6742" />
+
+        <LinearLayout
+            android:id="@+id/line_layout"
+            android:layout_width="match_parent"
+            android:layout_height="9dip"
+            android:layout_toLeftOf="@+id/line_right"
+            android:layout_toRightOf="@+id/line_left">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/line_middle_one"
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF6742" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/line_middle_two"
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF6742" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/line_middle_three"
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF6742" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/line_middle_fout"
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF6742" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_right"
+            android:layout_width="1dip"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#FF6742"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_time_recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@+id/line_left"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="9sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
